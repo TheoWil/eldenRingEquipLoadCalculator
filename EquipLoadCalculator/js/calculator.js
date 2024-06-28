@@ -3,9 +3,6 @@ function calculateEquipLoad() {
     var talisman_boost = 0.0;
     var required_max_weight;
     var raw_max_weight;
-    var require_endurance;
-    //console.log(typeof(equip_weight));
-    //console.log(equip_weight);
     if(isNaN(equip_weight)){
         document.getElementById("return-box").innerHTML = "Make Sure you are only putting a number in \"Current Equipped Weight\"";
         return;
