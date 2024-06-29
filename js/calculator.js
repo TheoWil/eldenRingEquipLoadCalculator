@@ -1,5 +1,5 @@
-function calculateEquipLoad() {
-    var equip_weight = parseFloat(document.getElementById("equip-weight").value);
+function calculateEquipLoad(eq_wt, eq_ld, ar_tl, er_tl, rt_bx) {
+    var equip_weight = parseFloat(document.getElementById(eq_wt).value);
     var talisman_boost = 0.0;
     var required_max_weight;
     var raw_max_weight;
@@ -7,10 +7,10 @@ function calculateEquipLoad() {
     //console.log(typeof(equip_weight));
     //console.log(equip_weight);
     if(isNaN(equip_weight)){
-        document.getElementById("return-box").innerHTML = "Make Sure you are only putting a number in \"Current Equipped Weight\"";
+        document.getElementById(rt_bx).innerHTML = "Make Sure you are only putting a number in \"Current Equipped Weight\"";
         return;
     }
-    switch(document.getElementById("equip-loads").value){
+    switch(document.getElementById(eq_ld).value){
         case "light":
             required_max_weight = equip_weight / 30 * 100;
             break;
@@ -20,7 +20,7 @@ function calculateEquipLoad() {
         case "heavy":
             required_max_weight = equip_weight + .1;
     }
-    switch(document.getElementById("arsenal-talisman-item").value){
+    switch(document.getElementById(ar_tl).value){
         case "none":
             break;
         case "arsenal-charm":
@@ -32,7 +32,7 @@ function calculateEquipLoad() {
         case "great-jar":
             talisman_boost = talisman_boost + 19.0;
     }
-    switch(document.getElementById("erdtree-talisman-item").value){
+    switch(document.getElementById(er_tl).value){
         case "none":
             break;
         case "erdtree-favor":
@@ -45,7 +45,7 @@ function calculateEquipLoad() {
             talisman_boost = talisman_boost + 8.0;
     }
     raw_max_weight = (required_max_weight / ((100 + talisman_boost)/100)).toFixed(1);
-    document.getElementById("return-box").innerHTML = enduranceFromEquipload(raw_max_weight) + ", with a minimum Max Weight of: <span class=\"emphatic\">" + raw_max_weight +"</span> (Pre-Talismans)";
+    document.getElementById(rt_bx).innerHTML = enduranceFromEquipload(raw_max_weight) + ", with a minimum Max Weight of: <span class=\"emphatic\">" + raw_max_weight +"</span> (Pre-Talismans)";
 }
 function enduranceFromEquipload(max_weight_needed){
     var text = "";

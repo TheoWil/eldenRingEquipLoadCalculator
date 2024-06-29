@@ -3,50 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Equip Load Calculator</title>
     <style>
-        div{
-            margin-block: 35px;
-        }
-        label{
-            color: rgb(0, 0, 0);
-            background-color: rgba(255, 255, 255, 0.473);
-            font-weight: 300;
-        }
-        div.calculator
-        {
-            background-image: url(images/Youtvde.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 0%;
-            background-position-y: top;
-            margin-right: 40%;
-        }
-        .top
-        {
-            padding-top: 100px;
-        }
-        .bottom
-        {
-            padding-bottom: 100px;
-        }
-        .emphatic
-        {
-            font-weight: bolder;
-            color: crimson;
-        }
+        @import url(style/style.css);
     </style>
 </head>
-<body style="background-color: coral;">
+<body>
     <script src="js/calculator.js"></script>
-    <p class="link-header"><a href="about.html">About</a></p>
-    <H1>Elden Ring Equipment Load Calculator</H1>
-    <div class="calculator">
-            <div class="top">
+    <p class="top-bar"><a class="link-header" href="about.html">About</a></p>
+    <H1 class="constructions">Elden Ring Equipment Load Calculator</H1>
+    <div id="sides">
+        <div class="rectangle left constructions"  style="left: 10%;"></div>
+        <div class="rectangle right constructions" style="right: 10%;"></div>
+    </div>
+    <div class="calculator center">
+            <div class="top center spaced">
                 <label for="current-equip-weight">Current Equipped Weight: </label>
                 <input name="current-equip-weight" id="equip-weight" type="text" value="0.0">
             </div>
-            <div>
+            <div class="center spaced">
                 <label for="target-equip-load">Desired Equip Load: </label>
                 <select name="target-equip-load" id="equip-loads">
                     <option value="light">Light Equip Load</option>
@@ -54,7 +29,7 @@
                     <option value="heavy">Heavy Equip Load</option>
                 </select>
             </div>
-            <div>
+            <div class="center spaced">
                 <label for="arsenal-talisman">Arsenal Talisman: </label>
                 <select name="arsenal-talisman" id="arsenal-talisman-item">
                     <option value="none">None</option>
@@ -63,7 +38,7 @@
                     <option value="great-jar">Great-Jar's Arsenal</option>
                 </select>
             </div>
-            <div>
+            <div class="center spaced">
                 <label for="erdtree-talisman">Erdtree's Favor: </label>
                 <select name="erdtree-talisman" id="erdtree-talisman-item">
                     <option value="none">None</option>
@@ -72,11 +47,11 @@
                     <option value="erdtree-favor-2">Erdtree's Favor +2</option>
                 </select>
             </div>
-            <div>
-                <button onclick="calculateEquipLoad()">Calculate</button>
+            <div class="center spaced">
+                <button onclick="calculateEquipLoad('equip-weight', 'equip-loads', 'arsenal-talisman-item', 'erdtree-talisman-item', 'return-box');">Calculate</button>
             </div>
-            <div style="background-color: rgba(255, 255, 255, 0.473);" id="return-box"><span class="emphatic">**WARNING**</span> Due to rounding in both the game and the calculator, endurance requirements can be off by one. You may need to add an extra point to endurance in order to meet the weight requirement.</div>
-            <div class="bottom"></div>
+            <div class="center spaced" style="background-color: rgba(255, 255, 255, 0.473);" id="return-box"><span class="emphatic">**WARNING**</span> Due to rounding in both the game and the calculator, endurance requirements can be off by one. You may need to add an extra point to endurance in order to meet the weight requirement.</div>
+            <div class="bottom center"></div>
     </div>
 </body>
 </html>
