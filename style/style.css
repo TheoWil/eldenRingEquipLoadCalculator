@@ -5,7 +5,7 @@ body{
     background-color: rgb(7, 65, 115);
     position: relative;
     top: 0px;
-    padding: 20px;
+    padding: 40px;
 }
 h1{
     text-align: center;
@@ -24,7 +24,8 @@ div.calculator
     border-radius: 20px;
 }
 .spaced{
-    margin-block: 35px;
+    margin-top: 35px;
+    margin-bottom: 35px;
     padding: 10px;
 }
 .top
