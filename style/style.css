@@ -5,7 +5,7 @@ body{
     background-color: rgb(7, 65, 115);
     position: relative;
     top: 0px;
-    padding: 1.5%;
+    padding: 20px;
 }
 h1{
     text-align: center;
@@ -47,7 +47,7 @@ div.calculator
 }
 .rectangle{
     background-color: black;
-    width: 150px;
+    width: 10%;
     height: 100%;
 }
 .right{
